@@ -1,13 +1,5 @@
-/* ============================================================
-   ConectaTech · Informática & Assistência Técnica
-   Lógica da página — JavaScript puro
-   ============================================================ */
-
-/* ---------- CONFIGURAÇÃO ---------- */
-// Troque pelo número real do parceiro (formato: DDI + DDD + número, só dígitos)
 const WHATSAPP_NUMERO = '5500000000000';
 
-/* ---------- DADOS DOS PRODUTOS ---------- */
 const PRODUTOS = [
   { id: 1,  nome: 'Notebook i5 8GB',        cat: 'computadores', emoji: '💻', preco: 2499.00, desc: 'Intel Core i5, 8GB RAM, SSD 256GB.' },
   { id: 2,  nome: 'PC Gamer Completo',       cat: 'computadores', emoji: '🖥️', preco: 3999.00, desc: 'Ryzen 5, 16GB RAM, placa de vídeo dedicada.' },
@@ -23,12 +15,10 @@ const PRODUTOS = [
   { id: 12, nome: 'Hub USB 4 portas',        cat: 'acessorios',   emoji: '🔋', preco: 39.90,   desc: 'USB 3.0, compacto e portátil.' },
 ];
 
-/* ---------- ESTADO ---------- */
 let carrinho = carregarCarrinho();
 let filtroAtual = 'todos';
 let buscaAtual = '';
 
-/* ---------- ATALHOS DOM ---------- */
 const $ = (sel) => document.querySelector(sel);
 const productsEl   = $('#products');
 const productsEmpty= $('#productsEmpty');
@@ -39,7 +29,6 @@ const cartTotalEl  = $('#cartTotal');
 const cartEl       = $('#cart');
 const toastEl      = $('#toast');
 
-/* ---------- UTILIDADES ---------- */
 const formatarPreco = (v) =>
   v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
@@ -63,9 +52,6 @@ function toast(msg) {
   toastTimer = setTimeout(() => toastEl.classList.remove('is-visible'), 2200);
 }
 
-/* ============================================================
-   CATÁLOGO
-   ============================================================ */
 function renderProdutos() {
   const termo = buscaAtual.trim().toLowerCase();
   const lista = PRODUTOS.filter((p) => {
@@ -103,9 +89,6 @@ function rotuloCategoria(cat) {
   return mapa[cat] || cat;
 }
 
-/* ============================================================
-   CARRINHO
-   ============================================================ */
 function adicionarAoCarrinho(id) {
   const produto = PRODUTOS.find((p) => p.id === id);
   if (!produto) return;
@@ -187,9 +170,6 @@ function fecharCarrinho() {
   cartEl.setAttribute('aria-hidden', 'true');
 }
 
-/* ============================================================
-   CHECKOUT VIA WHATSAPP
-   ============================================================ */
 function finalizarPedido() {
   if (carrinho.length === 0) {
     toast('Seu carrinho está vazio 🙈');
@@ -207,9 +187,6 @@ function finalizarPedido() {
   window.open(url, '_blank');
 }
 
-/* ============================================================
-   FORMULÁRIO DE CONTATO
-   ============================================================ */
 function validarFormulario(form) {
   let valido = true;
   const campos = ['nome', 'telefone', 'mensagem'];
@@ -261,17 +238,12 @@ function enviarContato(e) {
   }, 800);
 }
 
-/* ============================================================
-   EVENTOS
-   ============================================================ */
 function initEventos() {
-  // Adicionar produto (delegação de evento)
   productsEl.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-add]');
     if (btn) adicionarAoCarrinho(Number(btn.dataset.add));
   });
 
-  // Ações dentro do carrinho
   cartItemsEl.addEventListener('click', (e) => {
     const inc = e.target.closest('[data-inc]');
     const dec = e.target.closest('[data-dec]');
@@ -281,13 +253,11 @@ function initEventos() {
     if (rem) removerItem(Number(rem.dataset.rem));
   });
 
-  // Busca
   $('#searchInput').addEventListener('input', (e) => {
     buscaAtual = e.target.value;
     renderProdutos();
   });
 
-  // Filtros
   $('#filters').addEventListener('click', (e) => {
     const btn = e.target.closest('.filter');
     if (!btn) return;
@@ -297,14 +267,12 @@ function initEventos() {
     renderProdutos();
   });
 
-  // Carrinho — abrir/fechar
   $('#cartBtn').addEventListener('click', abrirCarrinho);
   $('#cartClose').addEventListener('click', fecharCarrinho);
   $('#cartOverlay').addEventListener('click', fecharCarrinho);
   $('#checkoutBtn').addEventListener('click', finalizarPedido);
   $('#cartClear').addEventListener('click', limparCarrinho);
 
-  // Menu mobile
   const nav = $('#nav');
   $('#navToggle').addEventListener('click', () => nav.classList.add('is-open'));
   $('#navClose').addEventListener('click', () => nav.classList.remove('is-open'));
@@ -312,18 +280,13 @@ function initEventos() {
     link.addEventListener('click', () => nav.classList.remove('is-open'))
   );
 
-  // Formulário
   $('#contactForm').addEventListener('submit', enviarContato);
 
-  // Fechar com ESC
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') { fecharCarrinho(); nav.classList.remove('is-open'); }
   });
 }
 
-/* ============================================================
-   INICIALIZAÇÃO
-   ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
   $('#year').textContent = new Date().getFullYear();
   renderProdutos();
