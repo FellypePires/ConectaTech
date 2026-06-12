@@ -1,0 +1,30 @@
+# Configuração local do editor/assistente
+.claude/
+
+# Dependências
+node_modules/
+
+# Perfis temporários do navegador (geração do PDF)
+.edge*/
+.pdf*/
+.cap*/
+.shot*/
+.warm*/
+.kart*/
+.q*/
+.p*/
+.sc/
+.cc/
+.r1/
+.o1/
+.t1/
+.z1/
+.h3/
+
+# Logs e temporários
+edge.log
+*.log
+
+# Sistema operacional
+Thumbs.db
+.DS_Store

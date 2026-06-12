@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ConectaTech - Informática e assistência técnica. Notebooks, periféricos, componentes e serviços." />
+  <title>ConectaTech · Informática & Assistência Técnica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo">
+        <span class="logo__icon">&lt;/&gt;</span>
+        <span class="logo__text">Conecta<em>Tech</em></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <button class="nav__close" id="navClose" aria-label="Fechar menu">&times;</button>
+        <ul class="nav__list">
+          <li><a href="#inicio" class="nav__link">Início</a></li>
+          <li><a href="#sobre" class="nav__link">Sobre</a></li>
+          <li><a href="#catalogo" class="nav__link">Produtos</a></li>
+          <li><a href="#servicos" class="nav__link">Serviços</a></li>
+          <li><a href="#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Abrir carrinho">
+          🛒
+          <span class="cart-btn__count" id="cartCount">0</span>
+        </button>
+        <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="inicio">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="hero__tag">⚡ Tecnologia perto de você</span>
+        <h1 class="hero__title">Sua loja de <span>informática</span> e assistência técnica</h1>
+        <p class="hero__text">
+          Notebooks, periféricos, componentes e acessórios com preço justo — além de
+          serviços de manutenção, formatação e upgrade. Atendimento rápido e de confiança.
+        </p>
+        <div class="hero__buttons">
+          <a href="#catalogo" class="btn btn--primary">Ver produtos</a>
+          <a href="#servicos" class="btn btn--ghost">Nossos serviços</a>
+        </div>
+        <ul class="hero__badges">
+          <li><strong>+500</strong> clientes atendidos</li>
+          <li><strong>4,9</strong> ⭐ de avaliação</li>
+          <li><strong>90 dias</strong> de garantia</li>
+        </ul>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <div class="hero__blob"></div>
+        <div class="hero__card">
+          <span class="hero__card-badge">🔥 Mais vendido</span>
+          <span class="hero__card-emoji">💻</span>
+          <p class="hero__card-name">Notebook i5 8GB</p>
+          <p class="hero__card-price">R$ 2.499,00</p>
+        </div>
+        <span class="hero__emoji hero__emoji--1">🖱️</span>
+        <span class="hero__emoji hero__emoji--2">⌨️</span>
+        <span class="hero__emoji hero__emoji--3">🎧</span>
+        <span class="hero__emoji hero__emoji--4">🖥️</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SOBRE ===================== -->
+  <section class="sobre section" id="sobre">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__pre">Quem somos</span>
+        <h2 class="section__title">Sobre a ConectaTech</h2>
+      </div>
+      <div class="sobre__grid">
+        <div class="sobre__text">
+          <p>
+            A <strong>ConectaTech</strong> é uma loja local de informática que une a venda de
+            produtos com assistência técnica especializada. Nascemos para aproximar a tecnologia
+            do dia a dia das pessoas e dos pequenos negócios da nossa região.
+          </p>
+          <p>
+            Aqui você encontra desde o cabo que faltava até a manutenção completa do seu
+            computador — sempre com atendimento honesto, preço justo e garantia no serviço.
+          </p>
+        </div>
+        <ul class="sobre__features">
+          <li class="feature">
+            <span class="feature__icon">🛠️</span>
+            <div>
+              <h3>Assistência especializada</h3>
+              <p>Diagnóstico, conserto e upgrade de PCs e notebooks.</p>
+            </div>
+          </li>
+          <li class="feature">
+            <span class="feature__icon">✅</span>
+            <div>
+              <h3>Garantia no serviço</h3>
+              <p>90 dias de garantia em todos os reparos.</p>
+            </div>
+          </li>
+          <li class="feature">
+            <span class="feature__icon">⚡</span>
+            <div>
+              <h3>Atendimento rápido</h3>
+              <p>Orçamento na hora pelo WhatsApp.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CATÁLOGO ===================== -->
+  <section class="catalogo section" id="catalogo">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__pre">Loja</span>
+        <h2 class="section__title">Produtos</h2>
+        <p class="section__sub">Monte seu pedido e finalize pelo WhatsApp. É só adicionar ao carrinho!</p>
+      </div>
+
+      <!-- Controles -->
+      <div class="catalogo__controls">
+        <div class="search">
+          <span class="search__icon">🔍</span>
+          <input type="text" id="searchInput" class="search__input" placeholder="Buscar produto..." />
+        </div>
+        <div class="filters" id="filters">
+          <button class="filter is-active" data-cat="todos">Todos</button>
+          <button class="filter" data-cat="computadores">Computadores</button>
+          <button class="filter" data-cat="perifericos">Periféricos</button>
+          <button class="filter" data-cat="componentes">Componentes</button>
+          <button class="filter" data-cat="acessorios">Acessórios</button>
+        </div>
+      </div>
+
+      <!-- Grade de produtos (preenchida via JS) -->
+      <div class="products" id="products"></div>
+      <p class="products__empty" id="productsEmpty" hidden>Nenhum produto encontrado 🔍</p>
+    </div>
+  </section>
+
+  <!-- ===================== SERVIÇOS ===================== -->
+  <section class="servicos section" id="servicos">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__pre">Assistência técnica</span>
+        <h2 class="section__title">Nossos Serviços</h2>
+        <p class="section__sub">Cuidamos do seu equipamento do diagnóstico à entrega.</p>
+      </div>
+      <div class="servicos__grid">
+        <article class="servico">
+          <span class="servico__icon">🧹</span>
+          <h3>Formatação & Limpeza</h3>
+          <p>Reinstalação do sistema, backup dos dados e otimização de desempenho.</p>
+          <span class="servico__price">a partir de R$ 80</span>
+        </article>
+        <article class="servico">
+          <span class="servico__icon">🔧</span>
+          <h3>Manutenção de Hardware</h3>
+          <p>Troca de peças, limpeza interna e reparo de placas.</p>
+          <span class="servico__price">a partir de R$ 100</span>
+        </article>
+        <article class="servico">
+          <span class="servico__icon">🚀</span>
+          <h3>Upgrade de PC</h3>
+          <p>Instalação de SSD, memória RAM e placa de vídeo.</p>
+          <span class="servico__price">a partir de R$ 60</span>
+        </article>
+        <article class="servico">
+          <span class="servico__icon">🦠</span>
+          <h3>Remoção de Vírus</h3>
+          <p>Limpeza de malwares e configuração de segurança.</p>
+          <span class="servico__price">a partir de R$ 70</span>
+        </article>
+        <article class="servico">
+          <span class="servico__icon">📶</span>
+          <h3>Redes & Wi-Fi</h3>
+          <p>Configuração de roteadores e melhoria de sinal.</p>
+          <span class="servico__price">a partir de R$ 90</span>
+        </article>
+        <article class="servico">
+          <span class="servico__icon">💾</span>
+          <h3>Recuperação de Dados</h3>
+          <p>Resgate de arquivos de HDs e pendrives danificados.</p>
+          <span class="servico__price">sob orçamento</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTATO ===================== -->
+  <section class="contato section" id="contato">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__pre">Fale com a gente</span>
+        <h2 class="section__title">Contato e Orçamentos</h2>
+      </div>
+
+      <div class="contato__grid">
+        <form class="form" id="contactForm" novalidate>
+          <div class="form__row">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+            <small class="form__error" data-for="nome"></small>
+          </div>
+          <div class="form__row">
+            <label for="telefone">Telefone / WhatsApp</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required />
+            <small class="form__error" data-for="telefone"></small>
+          </div>
+          <div class="form__row">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva o produto ou serviço que você precisa..." required></textarea>
+            <small class="form__error" data-for="mensagem"></small>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">Enviar pelo WhatsApp</button>
+          <p class="form__ok" id="formOk" hidden>✅ Tudo certo! Abrindo o WhatsApp...</p>
+        </form>
+
+        <div class="contato__info">
+          <h3>Onde nos encontrar</h3>
+          <ul class="info-list">
+            <li><span>📍</span> Av. da Tecnologia, 456 — Centro, Sua Cidade/UF</li>
+            <li><span>📞</span> (00) 00000-0000</li>
+            <li><span>✉️</span> contato@conectatech.com</li>
+            <li><span>🕘</span> Seg a Sex · 8h às 18h · Sáb · 8h às 12h</li>
+          </ul>
+          <div class="contato__social">
+            <a href="#" aria-label="Instagram">📷 Instagram</a>
+            <a href="#" aria-label="Facebook">👍 Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__brand">&lt;/&gt; ConectaTech</p>
+      <p class="footer__copy">© <span id="year"></span> ConectaTech · Projeto de Extensão Universitária — ADS</p>
+    </div>
+  </footer>
+
+  <!-- ===================== CARRINHO (drawer) ===================== -->
+  <div class="cart" id="cart" aria-hidden="true">
+    <div class="cart__overlay" id="cartOverlay"></div>
+    <aside class="cart__panel" role="dialog" aria-label="Carrinho de compras">
+      <div class="cart__header">
+        <h3>Seu pedido 🛒</h3>
+        <button class="cart__close" id="cartClose" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="cart__items" id="cartItems"></div>
+      <p class="cart__empty" id="cartEmpty">Seu carrinho está vazio.</p>
+      <div class="cart__footer">
+        <div class="cart__total">
+          <span>Total</span>
+          <strong id="cartTotal">R$ 0,00</strong>
+        </div>
+        <button class="btn btn--primary btn--block" id="checkoutBtn">Finalizar no WhatsApp</button>
+        <button class="cart__clear" id="cartClear">Limpar carrinho</button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Notificação (toast) -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

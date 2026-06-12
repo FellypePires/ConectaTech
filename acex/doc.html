@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<style>
+  @page {
+    size: A4;
+    margin: 3.5cm 2.2cm 3cm 2.2cm;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+    font-size: 12pt;
+    line-height: 1.3;
+    color: #000;
+  }
+
+  /* ---- Cabeçalho institucional (repete em todas as páginas) ---- */
+  .header {
+    position: fixed;
+    top: -2.9cm;            /* sobe para dentro da margem superior da página */
+    left: 0; right: 0;
+    margin: 0 auto;
+    width: 16.6cm;
+    text-align: center;
+  }
+  .header__box {
+    border: 0.5pt solid #000;
+    padding: 6pt 8pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7cm;
+  }
+  .header__logo {
+    border: 0.5pt solid #000;
+    width: 2.6cm; height: 1.55cm;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 11pt;
+    flex-shrink: 0;
+  }
+  .header__titles { font-size: 10.5pt; line-height: 1.35; }
+  .header__titles .t1 { font-size: 11pt; font-weight: bold; }
+  .header__titles .t2, .header__titles .t3 { font-size: 9.5pt; font-weight: bold; }
+  .header__sub { font-weight: bold; font-size: 11pt; margin-top: 6pt; }
+
+  /* ---- Tabela de registro ---- */
+  table.reg { width: 100%; border-collapse: collapse; }
+  table.reg td {
+    border: 0.5pt solid #000;
+    padding: 2.5pt 6pt;
+    vertical-align: top;
+    font-size: 9pt;
+    line-height: 1.2;
+  }
+  table.reg td.lbl { width: 4.6cm; font-weight: bold; }
+  .red { color: #d00; }
+
+  /* ---- Seções ---- */
+  h2 { font-size: 15pt; font-weight: bold; margin: 4pt 0 10pt; }
+  h3 { font-size: 12.5pt; font-weight: bold; margin: 16pt 0 6pt; }
+  p { margin: 6pt 0; text-align: justify; }
+  ul { margin: 6pt 0; padding-left: 22pt; }
+  li { margin: 2pt 0; }
+
+  /* ---- Código (verbatim) ---- */
+  pre {
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 9.5pt;
+    background: #f4f4f4;
+    border: 0.5pt solid #ddd;
+    padding: 8pt 10pt;
+    white-space: pre-wrap;
+    line-height: 1.25;
+    margin: 8pt 0;
+    page-break-inside: avoid;
+  }
+
+  /* ---- Figuras ---- */
+  figure { margin: 14pt 0; text-align: center; page-break-inside: avoid; }
+  figure img {
+    width: 100%; max-width: 15.5cm; height: auto;
+    border: 0.5pt solid #999;
+  }
+  .imgph {
+    max-width: 15.5cm; margin: 0 auto;
+    border: 1pt dashed #999; background: #fafafa;
+    color: #666; font-size: 10pt;
+    padding: 1.6cm 1cm; text-align: center;
+  }
+  figcaption { font-size: 10pt; margin-top: 5pt; }
+
+  .pagebreak { page-break-before: always; }
+
+  /* ---- Fluxograma simples ---- */
+  .flow { display: flex; align-items: stretch; justify-content: center; gap: 0; margin: 10pt 0; }
+  .flow .step {
+    border: 0.8pt solid #2563eb;
+    background: #e0ebff;
+    border-radius: 8px;
+    padding: 8pt 10pt;
+    font-size: 9.5pt;
+    text-align: center;
+    width: 4.6cm;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .flow .arrow { display: flex; align-items: center; padding: 0 6pt; color: #2563eb; font-weight: bold; font-size: 14pt; }
+</style>
+</head>
+<body>
+
+  <!-- Cabeçalho repetido -->
+  <div class="header">
+    <div class="header__box">
+      <div class="header__logo">UNIPAR</div>
+      <div class="header__titles">
+        <div class="t1">ATIVIDADE CURRICULAR DE EXTENSÃO - ACEX</div>
+        <div class="t2">ANÁLISE E DESENVOLVIMENTO DE SISTEMAS - ADS</div>
+        <div class="t3">UNIPAR TOLEDO - 2026</div>
+      </div>
+    </div>
+    <div class="header__sub">DOCUMENTO PARA REGISTRO DE ATIVIDADE DE EXTENSÃO</div>
+  </div>
+
+  <!-- ============ PÁGINA 1: TABELA DE REGISTRO ============ -->
+  <table class="reg">
+    <tr>
+      <td class="lbl">Projeto:</td>
+      <td><span class="red">MUNDO TECH 2026</span></td>
+    </tr>
+    <tr>
+      <td class="lbl">Validar:</td>
+      <td><span class="red">000000 EXTENSÃO I</span></td>
+    </tr>
+    <tr>
+      <td class="lbl">Público Atendido:</td>
+      <td>( ) Interno &nbsp;&nbsp; (X) Externo</td>
+    </tr>
+    <tr>
+      <td class="lbl">Ação Desenvolvida:</td>
+      <td>Letra H - Implementação de Projeto Específico de Software</td>
+    </tr>
+    <tr>
+      <td class="lbl">Integrantes:</td>
+      <td>
+        60000263 - Fellype Gabriel P. dos Santos - <span class="red">Xº</span><br>
+        60301340 - Pedro Kayser dos Santos - <span class="red">Xº</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="lbl">Título da Atividade:</td>
+      <td>Desenvolvimento do Sistema ConectaTech – Vitrine Digital para Loja de Informática e Assistência Técnica</td>
+    </tr>
+    <tr>
+      <td class="lbl">Resumo da Atividade:</td>
+      <td>Foi desenvolvido o sistema “ConectaTech”, uma página web responsiva que funciona como vitrine digital para um pequeno comércio local de informática e assistência técnica. O sistema permite ao cliente navegar pelo catálogo de produtos, buscar e filtrar itens por categoria, montar um carrinho de compras (salvo no navegador) e finalizar o pedido diretamente pelo WhatsApp, além de consultar os serviços oferecidos e enviar pedidos de orçamento.</td>
+    </tr>
+    <tr>
+      <td class="lbl">Local ou Demandante:</td>
+      <td><span class="red">Nome do comércio parceiro / cidade</span> — em parceria com o curso de Análise e Desenvolvimento de Sistemas, Universidade Paranaense, Toledo Campus I.</td>
+    </tr>
+    <tr>
+      <td class="lbl">Objetivos:</td>
+      <td>- Desenvolver uma página web responsiva que sirva de vitrine digital para um pequeno comércio local.<br>
+        - Aplicar conhecimentos de HTML5, CSS3 e JavaScript.<br>
+        - Aproximar a tecnologia da comunidade, facilitando o acesso do público aos produtos e serviços do parceiro por meio de catálogo on-line e contato direto via WhatsApp.</td>
+    </tr>
+    <tr>
+      <td class="lbl">Etapas:</td>
+      <td>Etapa 1 – Levantamento de requisitos com o parceiro <span class="red">(Mês/2026)</span>.<br>
+        Etapa 2 – Design e prototipação da interface <span class="red">(Mês/2026)</span>.<br>
+        Etapa 3 – Desenvolvimento do catálogo, carrinho e serviços <span class="red">(Mês/2026)</span>.<br>
+        Etapa 4 – Testes, ajustes responsivos e entrega <span class="red">(Mês/2026)</span>.</td>
+    </tr>
+    <tr>
+      <td class="lbl">Resultados Alcançados:</td>
+      <td>- Site funcional e responsivo finalizado.<br>
+        - Catálogo com 12 produtos, carrinho persistente e pedido via WhatsApp.<br>
+        - Código-fonte publicado no GitHub: https://github.com/FellypePires/ConectaTech<br>
+        - Publicação on-line (GitHub Pages): <span class="red">habilitar em Settings → Pages do repositório</span>.</td>
+    </tr>
+    <tr>
+      <td class="lbl">Quantidade de Público Atingido:</td>
+      <td><span class="red">Aproximadamente XX pessoas</span> (clientes do comércio parceiro) + disponibilização da página em ambiente público.</td>
+    </tr>
+  </table>
+
+  <!-- ============ PÁGINA 2+: EVIDÊNCIAS ============ -->
+  <div class="pagebreak"></div>
+
+  <h2>Apresentação das Evidências</h2>
+
+  <h3>Levantamento de Requisitos</h3>
+  <p>O sistema foi planejado a partir das necessidades de um pequeno comércio local de
+  informática que não possuía presença digital. As funcionalidades definidas foram:</p>
+  <ul>
+    <li>Exibir um catálogo de produtos com nome, descrição, categoria e preço.</li>
+    <li>Buscar produtos por nome ou descrição.</li>
+    <li>Filtrar produtos por categoria (computadores, periféricos, componentes e acessórios).</li>
+    <li>Adicionar produtos a um carrinho de compras, alterando a quantidade ou removendo itens.</li>
+    <li>Calcular automaticamente o total do pedido.</li>
+    <li>Persistir o carrinho no navegador (o pedido não se perde ao recarregar a página).</li>
+    <li>Finalizar o pedido enviando um resumo automático pelo WhatsApp.</li>
+    <li>Apresentar os serviços de assistência técnica oferecidos.</li>
+    <li>Disponibilizar um formulário de contato/orçamento com validação dos campos.</li>
+    <li>Funcionar de forma responsiva em computadores, tablets e celulares.</li>
+  </ul>
+
+  <p>Tecnologias utilizadas:</p>
+  <ul>
+    <li>HTML5 (estrutura semântica da página).</li>
+    <li>CSS3 (estilização, tema e layout responsivo).</li>
+    <li>JavaScript (ES6) — lógica do catálogo, carrinho e validações.</li>
+    <li>Web Storage API (localStorage) para persistência do carrinho.</li>
+    <li>API de mensagens do WhatsApp (wa.me) para o envio dos pedidos.</li>
+  </ul>
+
+  <h3>Arquitetura e Estrutura do Sistema</h3>
+  <p>Por se tratar de uma aplicação web estática (executada inteiramente no navegador,
+  sem servidor ou banco de dados relacional), o projeto é organizado em três camadas de
+  arquivos. Os dados dos produtos ficam em uma estrutura em JavaScript e o carrinho do
+  usuário é gravado no localStorage do próprio navegador.</p>
+  <pre>Extensao 1/
+|-- index.html      # estrutura da pagina (secoes e conteudo)
+|-- css/
+|   |-- style.css   # estilos, tema e responsividade
+|-- js/
+|   |-- script.js   # logica: catalogo, carrinho e WhatsApp</pre>
+
+  <p>Cada produto é representado por um objeto, conforme o exemplo abaixo:</p>
+  <pre>{ id: 1, nome: 'Notebook i5 8GB', cat: 'computadores',
+  preco: 2499.00, desc: 'Intel Core i5, 8GB RAM, SSD 256GB.' }</pre>
+
+  <p>Na Figura 1 é apresentado o fluxo de uso do sistema, da escolha do produto até o
+  envio do pedido pelo WhatsApp.</p>
+  <div class="flow">
+    <div class="step">1. Escolhe o produto no catálogo</div>
+    <div class="arrow">›</div>
+    <div class="step">2. Adiciona ao carrinho e ajusta a quantidade</div>
+    <div class="arrow">›</div>
+    <div class="step">3. Finaliza o pedido pelo WhatsApp</div>
+  </div>
+  <figcaption>Figura 1: Fluxo de uso — navegação no catálogo, carrinho e finalização via WhatsApp.</figcaption>
+
+  <h3>Funções do Sistema</h3>
+  <p>A seguir, algumas das principais funções implementadas em JavaScript.</p>
+  <p>Adicionar um produto ao carrinho (cria o item ou soma a quantidade):</p>
+  <pre>function adicionarAoCarrinho(id) {
+    const produto = PRODUTOS.find((p) => p.id === id);
+    const item = carrinho.find((i) => i.id === id);
+    if (item) {
+        item.qtd += 1;
+    } else {
+        carrinho.push({ ...produto, qtd: 1 });
+    }
+    salvarCarrinho();   // grava no localStorage
+    renderCarrinho();   // atualiza a tela
+}</pre>
+
+  <p>Montar a mensagem do pedido e abrir o WhatsApp:</p>
+  <pre>function finalizarPedido() {
+    let msg = 'Pedido - ConectaTech%0A%0A';
+    carrinho.forEach((i) => {
+        msg += '- ' + i.qtd + 'x ' + i.nome + '%0A';
+    });
+    msg += '%0ATotal: ' + formatarPreco(totalCarrinho());
+    window.open('https://wa.me/' + WHATSAPP_NUMERO + '?text=' + msg);
+}</pre>
+
+  <h3>Telas do Sistema</h3>
+  <p>Na Figura 2 é possível visualizar a página inicial do sistema ConectaTech.</p>
+  <figure>
+    <img src="images/home.png" alt="Página inicial" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'imgph',textContent:'[ Inserir print da página inicial — images/home.png ]'}))" />
+    <figcaption>Figura 2: Página inicial (home) do sistema ConectaTech.</figcaption>
+  </figure>
+
+  <p>Na Figura 3 é apresentado o catálogo de produtos com busca e filtros.</p>
+  <figure>
+    <img src="images/catalogo.png" alt="Catálogo de produtos" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'imgph',textContent:'[ Inserir print do catálogo — images/catalogo.png ]'}))" />
+    <figcaption>Figura 3: Catálogo de produtos com busca e filtro por categoria.</figcaption>
+  </figure>
+
+  <p>Na Figura 4 é exibido o carrinho de compras com o resumo do pedido.</p>
+  <figure>
+    <img src="images/carrinho.png" alt="Carrinho de compras" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'imgph',textContent:'[ Inserir print do carrinho — images/carrinho.png ]'}))" />
+    <figcaption>Figura 4: Carrinho de compras com itens, quantidades e total.</figcaption>
+  </figure>
+
+</body>
+</html>
