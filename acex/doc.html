@@ -36,11 +36,15 @@
     gap: 0.7cm;
   }
   .header__logo {
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .header__logo img { height: 1.4cm; width: auto; max-width: 5.5cm; }
+  /* fallback (quando ainda não há a logo): caixa com o texto UNIPAR */
+  .header__logo--fb {
     border: 0.5pt solid #000;
     width: 2.6cm; height: 1.55cm;
-    display: flex; align-items: center; justify-content: center;
     font-weight: bold; font-size: 11pt;
-    flex-shrink: 0;
   }
   .header__titles { font-size: 10.5pt; line-height: 1.35; }
   .header__titles .t1 { font-size: 11pt; font-weight: bold; }
@@ -117,7 +121,7 @@
   <!-- Cabeçalho repetido em todas as páginas -->
   <div class="header">
     <div class="header__box">
-      <div class="header__logo">UNIPAR</div>
+      <div class="header__logo"><img src="images/unipar_logo.png" alt="UNIPAR" onerror="var p=this.parentNode;p.classList.add('header__logo--fb');p.textContent='UNIPAR';" /></div>
       <div class="header__titles">
         <div class="t1">ATIVIDADE CURRICULAR DE EXTENSÃO - ACEX</div>
         <div class="t2">ANÁLISE E DESENVOLVIMENTO DE SISTEMAS - ADS</div>
@@ -150,8 +154,8 @@
     <tr>
       <td class="lbl">Integrantes:</td>
       <td>
-        60000263 - Fellype Gabriel P. dos Santos - <span class="red">Xº</span><br>
-        60301340 - Pedro Kayser dos Santos - <span class="red">Xº</span>
+        60000263 - Fellype Gabriel P. dos Santos - 3º<br>
+        60301340 - Pedro Kayser dos Santos - 3º
       </td>
     </tr>
     <tr>
