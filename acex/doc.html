@@ -5,7 +5,7 @@
 <style>
   @page {
     size: A4;
-    margin: 3.5cm 2.2cm 3cm 2.2cm;
+    margin: 1.4cm 2.2cm 1.4cm 2.2cm;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
@@ -16,14 +16,16 @@
     color: #000;
   }
 
-  /* ---- Cabeçalho institucional (repete em todas as páginas) ---- */
+  /* ---- Tabela-moldura: o cabeçalho (thead) repete em todas as páginas ---- */
+  table.doc { width: 100%; border-collapse: collapse; }
+  table.doc > thead { display: table-header-group; }
+  table.doc > thead > tr > td,
+  table.doc > tbody > tr > td { padding: 0; border: none; }
+
   .header {
-    position: fixed;
-    top: -2.9cm;            /* sobe para dentro da margem superior da página */
-    left: 0; right: 0;
-    margin: 0 auto;
-    width: 16.6cm;
+    width: 100%;
     text-align: center;
+    padding-bottom: 12pt;
   }
   .header__box {
     border: 0.5pt solid #000;
@@ -110,7 +112,9 @@
 </head>
 <body>
 
-  <!-- Cabeçalho repetido -->
+  <table class="doc">
+  <thead><tr><td>
+  <!-- Cabeçalho repetido em todas as páginas -->
   <div class="header">
     <div class="header__box">
       <div class="header__logo">UNIPAR</div>
@@ -122,6 +126,8 @@
     </div>
     <div class="header__sub">DOCUMENTO PARA REGISTRO DE ATIVIDADE DE EXTENSÃO</div>
   </div>
+  </td></tr></thead>
+  <tbody><tr><td>
 
   <!-- ============ PÁGINA 1: TABELA DE REGISTRO ============ -->
   <table class="reg">
@@ -286,6 +292,9 @@
     <img src="images/carrinho.png" alt="Carrinho de compras" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'imgph',textContent:'[ Inserir print do carrinho — images/carrinho.png ]'}))" />
     <figcaption>Figura 4: Carrinho de compras com itens, quantidades e total.</figcaption>
   </figure>
+
+  </td></tr></tbody>
+  </table>
 
 </body>
 </html>
