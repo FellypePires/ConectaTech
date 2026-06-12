@@ -5,6 +5,7 @@
 node_modules/
 
 # Perfis temporários do navegador (geração do PDF)
+.logo/
 .edge*/
 .pdf*/
 .cap*/
